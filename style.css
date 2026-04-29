@@ -107,3 +107,11 @@ div#apresentacao>textarea:focus {
 	border: 1px #C4BCBB solid;
 	box-shadow: none;
 }
+
+.darkmode {
+	color: white;
+}
+
+.lightmode {
+	color: black;
+}
