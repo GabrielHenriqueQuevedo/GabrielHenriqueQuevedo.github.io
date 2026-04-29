@@ -85,6 +85,7 @@
 			height: 100%;
 			cursor: default;
 			background-color: transparent;
+			resize: none;
 		}
 
 		div#apresentacao>textarea:hover {
