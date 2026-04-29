@@ -62,3 +62,8 @@
 			width: fit-content;
 			height: fit-content;
 		}
+
+		.interesses {
+			display: flex;
+			flex-direction: row;
+		}
