@@ -31,6 +31,10 @@
 			height: 40px;
 			border-bottom: 1px #C4BCBB solid;
 		}
+
+		div#cabecalho > * + * {
+			border-left: 1px #C4BCBB solid;
+		}
 		
 		.botao-aba {
 			width: fit-content;
