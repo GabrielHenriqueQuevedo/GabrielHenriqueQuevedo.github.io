@@ -76,6 +76,8 @@
 		div#apresentacao {
 			border: 1px #C4BCBB solid;
 			border-radius: 6px;
+			width: 30%;
+			height: 50%;
 		}
 
 		div#apresentacao>textarea {
