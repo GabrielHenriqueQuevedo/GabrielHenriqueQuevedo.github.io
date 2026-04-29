@@ -72,3 +72,16 @@
 			width: 16px;
 			height: 16px;
 		}
+
+		div#apresentacao {
+			border: 1px #C4BCBB solid;
+			border-radius: 6px;
+		}
+
+		div#apresentacao>textarea {
+			padding: 4px;
+			font-family: sans-serif;
+			width: 100%;
+			height: 100%;
+			cursor: default;
+		}
