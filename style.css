@@ -74,10 +74,11 @@
 		}
 
 		div#apresentacao {
-			border: 1px #C4BCBB solid;
+			border: none;
 			border-radius: 6px;
 			width: 30%;
 			height: 50%;
+			padding: 0;
 		}
 
 		div#apresentacao>textarea {
@@ -88,10 +89,18 @@
 			cursor: default;
 			background-color: transparent;
 			resize: none;
+			border: 1px #C4BCBB solid;
+			border-radius: 6px;
+			margin: 0;
 		}
 
 		div#apresentacao>textarea:hover {
 			cursor: default;
+		}
+
+		div#apresentacao>textarea:focus-visible {
+			border: 1px #C4BCBB solid;
+			outline: none;
 		}
 
 		div#apresentacao>textarea:focus {
