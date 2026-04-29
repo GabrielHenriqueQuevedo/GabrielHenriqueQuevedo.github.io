@@ -84,4 +84,14 @@
 			width: 100%;
 			height: 100%;
 			cursor: default;
+			background-color: transparent;
+		}
+
+		div#apresentacao>textarea:hover {
+			cursor: default;
+		}
+
+		div#apresentacao>textarea:focus {
+			border: 1px #C4BCBB solid;
+			box-shadow: none;
 		}
