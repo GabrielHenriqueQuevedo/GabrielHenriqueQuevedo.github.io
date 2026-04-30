@@ -1,5 +1,15 @@
-* { 
-	box-sizing: border-box; 
+:root {
+	--cor-fundo: #141414;
+	--cor-fonte: #f1f1f1;
+}
+
+.lightmode {
+	--cor-fundo: #f1f1f1;
+	--cor-fonte: black;
+}
+
+* {
+	box-sizing: border-box;
 	font-family: sans-serif;
 }
 
@@ -13,7 +23,7 @@ body {
 	flex: 1;
 	width: 100%;
 	height: 100%;
-	background-color: #141414;
+	background-color: var(--cor-fundo);
 	flex-direction: column;
 }
 
@@ -25,7 +35,7 @@ div#cabecalho {
 	border-bottom: 1px #C4BCBB solid;
 }
 
-div#cabecalho > * + * {
+div#cabecalho>*+* {
 	border-left: 1px #C4BCBB solid;
 }
 
@@ -43,66 +53,173 @@ div#cabecalho > * + * {
 }
 
 div#corpo {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
 }
 
 span {
 	width: fit-content;
 	height: fit-content;
+	color: var(--cor-fonte);
 }
 
-.interesses {
+/**************************PERFIL****************************/
+
+.perfil {
+	background: #0d0d0d;
+	border: 1px solid #00ff41;
+	border-radius: 4px;
+	padding: 20px;
+	font-family: 'Space Mono', 'Courier New', monospace;
+	position: relative;
+	overflow: hidden;
+	max-width: 420px;
+	align-self: center;
+	margin: 12px;
+}
+
+.perfil::before {
+	content: '● ● ●';
+	display: block;
+	font-size: 10px;
+	color: #00ff41;
+	opacity: 0.5;
+	margin-bottom: 12px;
+	letter-spacing: 4px;
+}
+
+.perfil::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: repeating-linear-gradient(0deg,
+			transparent,
+			transparent 2px,
+			rgba(0, 255, 65, 0.02) 2px,
+			rgba(0, 255, 65, 0.02) 4px);
+	pointer-events: none;
+}
+
+.perfil-prompt {
+	color: #00ff41;
+	font-size: 10px;
+	margin-bottom: 8px;
+	opacity: 0.8;
+}
+
+.perfil-nome {
+	color: #ffffff;
+	font-size: 22px;
+	font-weight: 700;
+	margin: 0 0 4px;
+	letter-spacing: 0.05em;
+}
+
+.perfil-sub {
+	color: #00ff41;
+	font-size: 11px;
+	opacity: 0.75;
+	margin: 0 0 16px;
+	letter-spacing: 0.08em;
+}
+
+.perfil-interesses {
 	display: flex;
-	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-bottom: 16px;
 }
 
-.interesses img {
-	width: 16px;
-	height: 16px;
+.perfil-interesse {
+	background: rgba(0, 255, 65, 0.08);
+	color: #00ff41;
+	border: 1px solid rgba(0, 255, 65, 0.3);
+	font-size: 10px;
+	padding: 3px 10px;
+	border-radius: 2px;
+	letter-spacing: 0.06em;
+	transition: background 0.2s;
 }
 
-div#apresentacao {
-	border: none;
-	border-radius: 6px;
-	width: 30%;
-	height: 50%;
-	padding: 0;
+.perfil-interesse:hover {
+	background: rgba(0, 255, 65, 0.18)
 }
 
-div#apresentacao>textarea {
-	padding: 4px;
-	font-family: sans-serif;
-	width: 100%;
-	height: 100%;
-	cursor: default;
-	background-color: transparent;
-	resize: none;
-	border: 1px #C4BCBB solid;
-	border-radius: 6px;
+.perfil-divider {
+	height: 1px;
+	background: rgba(0, 255, 65, 0.2);
+	margin: 14px 0;
+}
+
+.perfil-bio {
+	color: #aaaaaa;
+	font-size: 11px;
+	line-height: 1.75;
 	margin: 0;
 }
 
-div#apresentacao>textarea:hover {
-	cursor: default;
+.perfil-cursor {
+	display: inline-block;
+	width: 8px;
+	height: 14px;
+	background: #00ff41;
+	vertical-align: text-bottom;
+	animation: blink 1s step-end infinite;
 }
 
-div#apresentacao>textarea:focus-visible {
-	border: 1px #C4BCBB solid;
-	outline: none;
+@keyframes blink {
+
+	0%,
+	49% {
+		opacity: 1;
+	}
+
+	50%,
+	100% {
+		opacity: 0;
+	}
 }
 
-div#apresentacao>textarea:focus {
-	border: 1px #C4BCBB solid;
-	box-shadow: none;
+/*************************************************************/
+
+div#divnome {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
 }
 
-.darkmode {
-	color: white;
+#ladobranco {
+	background-color: #f1f1f1;
+	color: #141414;
+	display: flex;
+	flex-direction: column;
+	width: 50%;
 }
 
-.lightmode {
-	color: black;
+#ladopreto {
+	background-color: #141414;
+	color: #f1f1f1;
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+#ladobranco>span {
+	background-color: #f1f1f1;
+	color: #141414;
+}
+
+#ladopreto>span {
+	background-color: #141414;
+	color: #f1f1f1;
+	align-self: end;
+}
+
+.nome {
+	font-size: 64px;
 }
