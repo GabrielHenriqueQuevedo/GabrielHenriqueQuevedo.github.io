@@ -52,13 +52,6 @@ div#cabecalho>*+* {
 	padding: 4px;
 }
 
-div#corpo {
-	display: flex;
-	width: 100%;
-	height: 100%;
-	flex-direction: column;
-}
-
 span {
 	width: fit-content;
 	height: fit-content;
@@ -187,39 +180,99 @@ span {
 
 /*************************************************************/
 
-div#divnome {
+.divnome {
 	display: flex;
 	flex-direction: row;
 	width: 100%;
+	height: 30%;
 }
 
-#ladobranco {
+.ladobranco {
 	background-color: #f1f1f1;
 	color: #141414;
 	display: flex;
 	flex-direction: column;
 	width: 50%;
+	justify-content: center;
 }
 
-#ladopreto {
+.ladopreto {
 	background-color: #141414;
 	color: #f1f1f1;
 	display: flex;
 	flex-direction: column;
 	width: 50%;
+	justify-content: center;
 }
 
-#ladobranco>span {
+.ladobranco>h1 {
 	background-color: #f1f1f1;
 	color: #141414;
+	font-family: sans-serif;
 }
 
-#ladopreto>span {
+.ladopreto>h1 {
 	background-color: #141414;
 	color: #f1f1f1;
 	align-self: end;
+	font-family: sans-serif;
 }
 
 .nome {
-	font-size: 64px;
+	font-size: clamp(24px, 5vw + 10px, 64px);
 }
+
+/********************Teste******************/
+
+.container {
+	height: 100vh;
+	/* Altura da tela */
+	overflow-y: scroll;
+	/* Ativa rolagem vertical */
+	scroll-snap-type: y mandatory;
+	/* "Trava" na vertical */
+}
+
+.container::-webkit-scrollbar {
+	width: 16px;
+}
+
+.container::-webkit-scrollbar-track {
+	background-color: #141414;
+}
+
+.container::-webkit-scrollbar-thumb {
+	background-color: #00c200;
+	border-radius: 16px;
+	border: 0.5px #141414 solid;
+}
+
+.page {
+	height: 100vh;
+	/* Cada seção ocupa 100% da tela */
+	scroll-snap-align: start;
+	/* Alinha o início da seção */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3rem;
+}
+
+.page iframe {
+	height: 100vh;
+	width: 100vw;
+}
+
+/*******************************************/
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/* Opcional: remove a barra de rolagem padrão */
+}
+
+/**********************Responsividade************************/
+
+/************************************************************/
