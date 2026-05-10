@@ -1,5 +1,6 @@
 <html>
-  <head>
+
+<head>
 	<meta charset="UTF-8">
 	<meta name="Portfólio" content="Página de portfólio para trabalho universitário.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +9,98 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://gabrielhenriquequevedo.github.io/index" />
 	<title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <script>
-	</script>	
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
 	<div class="pai">
+
+		<div class="sec-header">
+			<div class="sec-title-row">
+				<span class="sec-arrow" aria-hidden="true">▶</span>
+				<h2 class="sec-name">Projetos</h2>
+			</div>
+			<div class="sec-line"></div>
+			<p class="sec-cmd">$ ls ./projetos --all</p>
+		</div>
+
+		<div class="projetos">
+			<p class="projetos-prompt">$ ls ./projects --sort=status</p>
+
+			<div class="projetos-header">
+				<span>projeto</span>
+				<span>linguagem</span>
+				<span>stack</span>
+				<span>status</span>
+			</div>
+
+			<div class="projetos-row">
+				<div>
+					<p class="projetos-name">xadrez</p>
+					<p class="projetos-desc">Jogo de xadrez simples</p>
+				</div>
+				<div class="projetos-lang">
+					<div class="projetos-dot" style="background: #3572A5"></div>
+					<span>C++</span>
+				</div>
+				<div class="projetos-stack">
+					<span class="projetos-tag">C++</span>
+					<span class="projetos-tag">SFML</span>
+				</div>
+				<div><span class="projetos-badge wip">Developing</span></div>
+			</div>
+
+			<a class="projetos-row" href="https://github.com/GabrielHenriqueQuevedo/GabrielHenriqueQuevedo.github.io"
+				target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+				<div>
+					<p class="projetos-name">portfolio.dev</p>
+					<p class="projetos-desc">Site de portfólio pessoal</p>
+				</div>
+				<div class="projetos-lang">
+					<div class="projetos-dot" style="background: #f0db4f"></div>
+					<span>JS</span>
+				</div>
+				<div class="projetos-stack">
+					<span class="projetos-tag">CSS</span>
+					<span class="projetos-tag">HTML</span>
+				</div>
+				<div><span class="projetos-badge done">Finished</span></div>
+			</a>
+
+			<div class="projetos-row">
+				<div>
+					<p class="projetos-name">modelos_3d</p>
+					<p class="projetos-desc">Modelos 3d feitos para aprendizado</p>
+				</div>
+				<div class="projetos-lang">
+					<div class="projetos-dot" style="background: #EA7600"></div>
+					<span>3D</span>
+				</div>
+				<div class="projetos-stack">
+					<span class="projetos-tag">Blender</span>
+				</div>
+				<div><span class="projetos-badge pause">Paused</span></div>
+			</div>
+
+			<a class="projetos-row" href="https://github.com/GabrielHenriqueQuevedo/Ping-pong?tab=readme-ov-file"
+				target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+				<div>
+					<p class="projetos-name">ping-pong</p>
+					<p class="projetos-desc">Jogo de ping-pong simples</p>
+				</div>
+				<div class="projetos-lang">
+					<div class="projetos-dot" style="background: #3572A5"></div>
+					<span>C++</span>
+				</div>
+				<div class="projetos-stack">
+					<span class="projetos-tag">C++</span>
+					<span class="projetos-tag">SFML</span>
+				</div>
+				<div><span class="projetos-badge done">Finished</span></div>
+			</a>
+
+		</div>
 	</div>
-  </body>
+</body>
+
 </html>
