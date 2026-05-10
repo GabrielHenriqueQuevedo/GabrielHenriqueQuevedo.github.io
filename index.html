@@ -13,15 +13,91 @@
 </head>
 
 <body class="darkmode">
-    <div class="pai">
-        <div class="container">
-            <section class="page"><iframe src="sobre-mim.html"></iframe></section>
-            <section class="page"><iframe src="formacao.html"></iframe></section>
-            <section class="page"><iframe src="projetos.html"></iframe></section>
-            <section class="page"><iframe src="contato.html"></iframe></section>
-        </div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+    <div class="layout">
+
+        <nav class="rail" aria-label="Navegação principal">
+
+            <div class="rail-logo">G</div>
+
+            <a class="rail-item active" href="#sobre" onclick="setActive(event, 'sobre')" aria-label="Sobre">
+                <i class="ti ti-user" aria-hidden="true"></i>
+                <span>sobre</span>
+            </a>
+
+            <a class="rail-item" href="#formacao" onclick="setActive(event, 'formacao')" aria-label="Formação">
+                <i class="ti ti-school" aria-hidden="true"></i>
+                <span>form.</span>
+            </a>
+
+            <a class="rail-item" href="#projetos" onclick="setActive(event, 'projetos')" aria-label="Projetos">
+                <i class="ti ti-code" aria-hidden="true"></i>
+                <span>proj.</span>
+            </a>
+
+            <a class="rail-item" href="#contato" onclick="setActive(event, 'contato')" aria-label="Contato">
+                <i class="ti ti-mail" aria-hidden="true"></i>
+                <span>cont.</span>
+            </a>
+
+            <div class="rail-footer">
+                <div class="rail-dot" title="disponível"></div>
+            </div>
+
+        </nav>
+
+        <main class="main container" id="main-content">
+
+            <section id="sobre" class="page">
+                <iframe src="sobre-mim.html"></iframe>
+            </section>
+
+            <section id="formacao" class="page">
+                <iframe src="formacao.html"></iframe>
+            </section>
+
+            <section id="projetos" class="page">
+                <iframe src="projetos.html"></iframe>
+            </section>
+
+            <section id="contato" class="page">
+                <iframe src="contato.html"></iframe>
+            </section>
+
+        </main>
     </div>
 
 </body>
+
+<script>
+    function setActive(e, id) {
+        document.querySelectorAll('.rail-item')
+            .forEach(el => el.classList.remove('active'));
+        e.currentTarget.classList.add('active');
+    }
+
+    const sections = document.querySelectorAll('.page');
+    const navItems = document.querySelectorAll('.rail-item');
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.id;
+                    navItems.forEach(item => {
+                        item.classList.toggle(
+                            'active',
+                            item.getAttribute('href') === '#' + id
+                        );
+                    });
+                }
+            });
+        },
+        { threshold: 0.4 }
+    );
+
+    sections.forEach(sec => observer.observe(sec));
+</script>
 
 </html>
