@@ -1,5 +1,6 @@
 <html>
-  <head>
+
+<head>
 	<meta charset="UTF-8">
 	<meta name="Portfólio" content="Página de portfólio para trabalho universitário.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,122 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://gabrielhenriquequevedo.github.io/index" />
 	<title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-  </body>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="pai">
+
+		<div class="sec-header">
+			<div class="sec-title-row">
+				<span class="sec-arrow" aria-hidden="true">▶</span>
+				<h2 class="sec-name">Contato</h2>
+			</div>
+			<div class="sec-line"></div>
+			<p class="sec-cmd">$ ls ./contato --all</p>
+		</div>
+
+		<div class="contato">
+			<p class="contato-prompt">$ ./contact --send-message</p>
+
+			<!-- links sociais -->
+			<div class="contato-links">
+				<a class="contato-link" href="https://github.com/GabrielHenriqueQuevedo" target="_blank">
+					<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path
+							d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+					</svg>
+					github
+				</a>
+				<a class="contato-link" href="https://linkedin.com/in/gabriel-henrique-paula" target="_blank">
+					<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+						<rect x="2" y="9" width="4" height="12" />
+						<circle cx="4" cy="4" r="2" />
+					</svg>
+					linkedin
+				</a>
+				<a class="contato-link" href="mailto:gabraque@gmail.com">
+					<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+						<polyline points="22,6 12,13 2,6" />
+					</svg>
+					email
+				</a>
+			</div>
+
+			<div class="contato-divider"></div>
+
+			<form class="contato-form" action="https://formspree.io/f/xwvywgjv" method="POST"
+				onsubmit="handleSubmit(event)">
+
+				<div class="contato-field">
+					<label class="contato-label" for="contato-nome">nome</label>
+					<input class="contato-input" id="contato-nome" type="text" name="nome" placeholder="seu nome..."
+						required>
+				</div>
+
+				<div class="contato-field">
+					<label class="contato-label" for="contato-email">email</label>
+					<input class="contato-input" id="contato-email" type="email" name="email"
+						placeholder="seu@email.com" required>
+				</div>
+
+				<div class="contato-field">
+					<label class="contato-label" for="contato-msg">mensagem</label>
+					<textarea class="contato-textarea" id="contato-msg" name="mensagem" placeholder="escreva aqui..."
+						required></textarea>
+				</div>
+
+				<!-- honeypot anti-spam nativo do Formspree -->
+				<input type="text" name="_gotcha" style="display:none">
+
+				<button class="contato-btn" type="submit" id="contato-submit">
+					[ enviar mensagem ]
+				</button>
+
+				<p class="contato-feedback" id="contato-feedback"></p>
+
+			</form>
+		</div>
+	</div>
+	<script>
+		async function handleSubmit(e) {
+			e.preventDefault();
+
+			const btn = document.getElementById('contato-submit');
+			const fb = document.getElementById('contato-feedback');
+
+			btn.disabled = true;
+			btn.textContent = '[ enviando... ]';
+			fb.textContent = '';
+			fb.className = 'contato-feedback';
+
+			try {
+				const res = await fetch(e.target.action, {
+					method: 'POST',
+					body: new FormData(e.target),
+					headers: { 'Accept': 'application/json' }
+				});
+
+				if (res.ok) {
+					fb.textContent = '> mensagem enviada. obrigado!';
+					fb.className = 'contato-feedback ok';
+					e.target.reset();
+				} else {
+					const data = await res.json();
+					fb.textContent = '> erro: ' + (data?.errors?.[0]?.message || 'tente novamente.');
+					fb.className = 'contato-feedback err';
+				}
+			} catch {
+				fb.textContent = '> erro de rede. verifique sua conexão.';
+				fb.className = 'contato-feedback err';
+			}
+
+			btn.disabled = false;
+			btn.textContent = '[ enviar mensagem ]';
+		}
+	</script>
+</body>
+
 </html>
