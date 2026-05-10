@@ -1,5 +1,6 @@
 <html>
-  <head>
+
+<head>
 	<meta charset="UTF-8">
 	<meta name="Portfólio" content="Página de portfólio para trabalho universitário.">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,46 +9,91 @@
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://gabrielhenriquequevedo.github.io/index" />
 	<title>Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-   <div class="pai">
-			<div class="divnome">
-				<div class="ladopreto">
-					<h1 class="nome">Gabriel H.</h1>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="darkmode">
+	<div class="pai">
+		<div class="divnome">
+			<div class="ladopreto">
+				<h1 class="nome">Gabriel H.</h1>
+			</div>
+			<div class="ladobranco">
+				<h1 class="nome">P. Quevedo</h1>
+			</div>
+		</div>
+
+		<div class="sec-header">
+			<div class="sec-title-row">
+				<span class="sec-arrow" aria-hidden="true">▶</span>
+				<h2 class="sec-name">Sobre mim</h2>
+			</div>
+			<div class="sec-line"></div>
+			<p class="sec-cmd">$ ls ./sobre-mim --all</p>
+		</div>
+		
+		<div class="perfil">
+			<p class="perfil-prompt">$ ./gabriel --profile</p>
+			<h1 class="perfil-nome">
+				Gabriel<span class="perfil-cursor"></span>
+			</h1>
+			<p class="perfil-sub">AGE: 19 | ROLE: DEV</p>
+			<div class="perfil-interesses">
+				<span>Interesses</span>
+				<div class="perfil-interesse">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-terminal-2">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path d="M8 9l3 3l-3 3" />
+						<path d="M13 15l3 0" />
+						<path d="M3 6a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -12" />
+					</svg><span> Programação</span>
 				</div>
-				<div class="ladobranco">
-					<h1 class="nome">P. Quevedo</h1>
+				<div class="perfil-interesse">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-chess-king">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path
+							d="M8 16l-1.447 .724a1 1 0 0 0 -.553 .894v2.382h12v-2.382a1 1 0 0 0 -.553 -.894l-1.447 -.724h-8" />
+						<path d="M8.5 16a3.5 3.5 0 1 1 3.163 -5h.674a3.5 3.5 0 1 1 3.163 5l-7 0" />
+						<path d="M9 6h6" />
+						<path d="M12 3v8" />
+					</svg><span> Xadrez</span>
+				</div>
+				<div class="perfil-interesse">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-brand-blender">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path d="M9 14a6 5 0 1 0 12 0a6 5 0 1 0 -12 0" />
+						<path d="M14 14a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+						<path d="M3 16l9 -6.5" />
+						<path d="M6 9h9" />
+						<path d="M13 5l5.65 5" />
+					</svg><span> Modelagem 3D</span>
+				</div>
+				<div class="perfil-interesse">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+						stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+						class="icon icon-tabler icons-tabler-outline icon-tabler-music">
+						<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+						<path d="M3 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+						<path d="M13 17a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+						<path d="M9 17v-13h10v13" />
+						<path d="M9 8h10" />
+					</svg><span> Contrabaixo</span>
 				</div>
 			</div>
-			<div class="perfil">
-				<p class="perfil-prompt">$ ./gabriel --profile</p>
-				<h1 class="perfil-nome">
-					Gabriel<span class="perfil-cursor"></span>
-				</h1>
-				<p class="perfil-sub">AGE: 19 | ROLE: DEV</p>
-				<div class="perfil-interesses">
-					<span>Interesses</span>
-					<div class="perfil-interesse">
-						<span>🖥️ Programação</span>
-					</div>
-					<div class="perfil-interesse">
-						<span>♟️ Xadrez</span>
-					</div>
-					<div class="perfil-interesse">
-						<span>🛠️ Modelagem 3D</span>
-					</div>
-					<div class="perfil-interesse">
-						<span>🎸 Contrabaixo</span>
-					</div>
-				</div>
-				<div class="perfil--divider"></div>
-				<p class="perfil-bio">Olá! Sou o Gabriel, tenho 19 anos e a tecnologia sempre foi o meu terreno
-					favorito.
-					Minha paixão por computadores me levou a mergulhar no mundo do desenvolvimento, onde busco
-					transformar curiosidade em código e soluções eficientes. Estou sempre em busca de novos desafios
-					para evoluir minhas habilidades técnicas.</p>
-			</div>
+			<div class="perfil-divider"></div>
+			<p class="perfil-bio">Olá! Sou o Gabriel, tenho 19 anos e a tecnologia sempre foi o meu terreno
+				favorito.
+				Minha paixão por computadores me levou a mergulhar no mundo do desenvolvimento, onde busco
+				transformar curiosidade em código e soluções eficientes. Estou sempre em busca de novos desafios
+				para evoluir minhas habilidades técnicas.</p>
+		</div>
 	</div>
 </body>
+
 </html>
