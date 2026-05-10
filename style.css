@@ -389,6 +389,7 @@ span {
 	max-width: 420px;
 	margin: auto;
 	position: relative;
+	width: 90%;
 }
 
 .formacao::after {
@@ -519,6 +520,7 @@ span {
 	max-width: 520px;
 	margin: auto;
 	position: relative;
+	width: 100%;
 }
 
 .projetos::after {
